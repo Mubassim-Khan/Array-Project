@@ -1,7 +1,14 @@
 import java.util.Scanner;
 
-public class Program_1 {
-
+public class Program_4 {
+    static void removeDuplicate(int[] array) {
+        for (int i = 1; i < array.length; i++) {
+            if (array[i] == array[i - 1]) {
+                System.out.print(array[i] + " ");
+            }
+        }
+    }
+    
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter size of array: ");
@@ -15,7 +22,7 @@ public class Program_1 {
         }
         scanner.close();
 
-        // Sort Array using Bubble Sort
+        // Sort array using Bubble Sort
         for (int i = 0; i < size; i++) {
             for (int j = 0; j < size - i - 1; j++) {
                 if (array[j] > array[j + 1]) {
@@ -26,23 +33,8 @@ public class Program_1 {
             }
         }
 
-        int firstNo = array[0];
-        int range = array[size - 1];
-        boolean isSame;
-
-        // To find missing elements
-        System.out.print("Missing elements are: ");
-        for (int i = firstNo; i <= range; i++) {
-            isSame = false;
-            for (int j = 0; j < array.length; j++) {
-                if (i == array[j]) {
-                    isSame = true;
-                    break;
-                }
-            }
-            if (!isSame) {
-                System.out.print(i + " ");
-            }
-        }
+        // Print Result
+        System.out.print("Duplicate Elements are: ");
+        removeDuplicate(array);
     }
 }
