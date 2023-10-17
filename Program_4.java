@@ -1,6 +1,7 @@
 import java.util.Scanner;
 
 public class Program_4 {
+    // Method to remove duplicate lemen
     static void removeDuplicate(int[] array) {
         for (int i = 1; i < array.length; i++) {
             if (array[i] == array[i - 1]) {

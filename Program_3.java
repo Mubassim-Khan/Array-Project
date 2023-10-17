@@ -14,6 +14,7 @@ public class Program_3 {
         }
         scanner.close();
 
+        // To find frequency & most repeated element
         int maxCount = 0;
         int repeatedNumber = 0;
         for (int i = 0; i < array.length; i++) {
@@ -23,7 +24,7 @@ public class Program_3 {
                     count++;
                 }
             }
-            
+
             if (count > maxCount) {
                 maxCount = count;
                 repeatedNumber = array[i];
@@ -31,7 +32,6 @@ public class Program_3 {
         }
 
         if (maxCount <= 1) {
-            System.out.println("No Repeated elements");
             for (int i : array) {
                 System.out.print(i + " ");
             }
@@ -46,8 +46,8 @@ public class Program_3 {
             }
 
             // Put 1st element of row to repeatedNumber
-            for (int i = 0; i < maxCount; i++) {        // maybe prob here (i < maxCount or size)
-                Array_2D[0][i] = repeatedNumber;
+            for (int i = 0; i < maxCount; i++) {
+                Array_2D[i][0] = repeatedNumber;
             }
 
             // Fill rest of the array
@@ -60,6 +60,7 @@ public class Program_3 {
             }
 
             // Print Array
+            System.out.println("Output Array: ");
             for (int i = 0; i < maxCount; i++) {
                 for (int j = 0; j < size; j++) {
                     if (Array_2D[i][j] != 0) {
